@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* helpers globaux */
+.container-page { @apply mx-auto max-w-5xl px-4; }
+.card { @apply rounded-2xl border border-gray-200 bg-white p-4 shadow-sm; }
+.btn { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-medium; }
+.btn-primary { @apply btn bg-black text-white hover:bg-gray-800; }
+.btn-outline { @apply btn border border-gray-300 bg-white hover:bg-gray-50; }
+.badge { @apply inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm; }
