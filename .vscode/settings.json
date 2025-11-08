@@ -1,0 +1,10 @@
+{
+  "stylelint.validate": ["css", "scss", "postcss"],
+  "css.validate": false,
+  "scss.validate": false,
+  "files.associations": {
+    "*.scss": "scss",
+    "*.css": "css"
+  }
+}
+
