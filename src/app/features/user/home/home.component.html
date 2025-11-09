@@ -1,0 +1,293 @@
+<!-- HERO -->
+<section
+  class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-black to-gray-800 p-8 text-white"
+>
+  <div class="relative z-10">
+    <div
+      class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
+    >
+      <div>
+        <div
+          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-gray-200 ring-1 ring-white/20"
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Vote
+          ouvert aujourd’hui jusqu’à 11:00
+        </div>
+        <h1 class="mt-3 text-3xl font-bold md:text-4xl">
+          Choisis ton plat préféré du jour 🍽️
+        </h1>
+        <p class="mt-2 max-w-2xl text-white/80">
+          Parcours le menu des restaurants partenaires et vote en un clic. Les
+          résultats s’affichent en temps réel.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a routerLink="/menu" class="btn-primary">Voir le menu du jour</a>
+          <a
+            routerLink="/results"
+            class="btn-outline bg-white/10 text-white ring-1 ring-white/20"
+            >Voir les résultats</a
+          >
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="rounded-xl bg-white/10 px-4 py-3 ring-1 ring-white/15">
+          <div class="text-2xl font-bold">12</div>
+          <div class="text-xs text-white/70">Restaurants</div>
+        </div>
+        <div class="rounded-xl bg-white/10 px-4 py-3 ring-1 ring-white/15">
+          <div class="text-2xl font-bold">38</div>
+          <div class="text-xs text-white/70">Plats du jour</div>
+        </div>
+        <div class="rounded-xl bg-white/10 px-4 py-3 ring-1 ring-white/15">
+          <div class="text-2xl font-bold">1 254</div>
+          <div class="text-xs text-white/70">Votes ce mois</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- décor -->
+  <div
+    class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl"
+  ></div>
+  <div
+    class="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl"
+  ></div>
+</section>
+
+<!-- SECTION RESTAURANTS EN VEDETTE -->
+<section class="mt-8">
+  <div class="mb-4 flex items-center justify-between">
+    <h2 class="text-xl font-semibold">Restaurants partenaires ⭐</h2>
+    <a routerLink="/menu" class="text-sm text-gray-600 hover:underline"
+      >Tout voir</a
+    >
+  </div>
+
+  <!-- Grid de cartes resto -->
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- CARD -->
+    <article
+      class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+    >
+      <div class="relative h-40 w-full overflow-hidden">
+        <img
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1400&auto=format&fit=crop"
+          alt="Le Dôme"
+        />
+        <span
+          class="absolute left-3 top-3 rounded-full bg-black/70 px-2 py-0.5 text-xs text-white"
+          >Le Dôme</span
+        >
+      </div>
+      <div class="p-4">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Le Dôme</h3>
+          <span class="text-xs text-gray-500">Français</span>
+        </div>
+        <!-- stars -->
+        <div class="mt-2 flex items-center gap-1 text-amber-500">
+          <!-- 4.5/5 -->
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current text-amber-300" viewBox="0 0 20 20">
+            <defs>
+              <linearGradient id="half">
+                <stop offset="50%" stop-color="currentColor" />
+                <stop offset="50%" stop-color="transparent" />
+              </linearGradient>
+            </defs>
+            <path
+              fill="url(#half)"
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <span class="ml-2 text-xs text-gray-500">4.5 (312)</span>
+        </div>
+        <p class="mt-2 line-clamp-2 text-sm text-gray-600">
+          Cuisine de marché, produits frais, menu du jour varié.
+        </p>
+        <div class="mt-3 flex justify-end">
+          <a routerLink="/menu" class="btn-outline">Voir le menu</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Bistro 42 -->
+    <article
+      class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+    >
+      <div class="relative h-40 w-full overflow-hidden">
+        <img
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1400&auto=format&fit=crop"
+          alt="Bistro 42"
+        />
+        <span
+          class="absolute left-3 top-3 rounded-full bg-black/70 px-2 py-0.5 text-xs text-white"
+          >Bistro 42</span
+        >
+      </div>
+      <div class="p-4">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Bistro 42</h3>
+          <span class="text-xs text-gray-500">Fusion</span>
+        </div>
+        <div class="mt-2 flex items-center gap-1 text-amber-500">
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg
+            class="h-4 w-4 fill-current"
+            viewBox="0 0 20 20"
+            style="opacity: 0.35"
+          >
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <span class="ml-2 text-xs text-gray-500">4.0 (201)</span>
+        </div>
+        <p class="mt-2 line-clamp-2 text-sm text-gray-600">
+          Burgers gourmets, bowls et options veggie.
+        </p>
+        <div class="mt-3 flex justify-end">
+          <a routerLink="/menu" class="btn-outline">Voir le menu</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Pizza Rio -->
+    <article
+      class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+    >
+      <div class="relative h-40 w-full overflow-hidden">
+        <img
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1400&auto=format&fit=crop"
+          alt="Pizza Rio"
+        />
+        <span
+          class="absolute left-3 top-3 rounded-full bg-black/70 px-2 py-0.5 text-xs text-white"
+          >Pizza Rio</span
+        >
+      </div>
+      <div class="p-4">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Pizza Rio</h3>
+          <span class="text-xs text-gray-500">Italien</span>
+        </div>
+        <div class="mt-2 flex items-center gap-1 text-amber-500">
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M10 15.27l-5.18 3.05 1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
+            />
+          </svg>
+          <span class="ml-2 text-xs text-gray-500">5.0 (98)</span>
+        </div>
+        <p class="mt-2 line-clamp-2 text-sm text-gray-600">
+          Pizzas au feu de bois, pâtes fraîches et focaccias maison.
+        </p>
+        <div class="mt-3 flex justify-end">
+          <a routerLink="/menu" class="btn-outline">Voir le menu</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Ajoute d’autres cartes au besoin… -->
+  </div>
+</section>
+
+<!-- SECTION “COMMENT ÇA MARCHE ?” -->
+<section class="mt-10">
+  <h2 class="mb-4 text-xl font-semibold">Comment ça marche ?</h2>
+  <div class="grid gap-4 md:grid-cols-3">
+    <div class="card">
+      <div class="badge mb-2">1</div>
+      <h3 class="font-semibold">Choisis un restaurant</h3>
+      <p class="mt-1 text-sm text-gray-600">Parmi nos partenaires du jour.</p>
+    </div>
+    <div class="card">
+      <div class="badge mb-2">2</div>
+      <h3 class="font-semibold">Parcours le menu</h3>
+      <p class="mt-1 text-sm text-gray-600">
+        Découvre les plats proposés aujourd’hui.
+      </p>
+    </div>
+    <div class="card">
+      <div class="badge mb-2">3</div>
+      <h3 class="font-semibold">Vote en un clic</h3>
+      <p class="mt-1 text-sm text-gray-600">Et retrouve le gagnant à midi 🎉</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section
+  class="mt-10 rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm"
+>
+  <h3 class="text-lg font-semibold">Prêt(e) à voter ?</h3>
+  <p class="mt-1 text-gray-600">
+    Découvre le menu du jour et choisis ton favori.
+  </p>
+  <div class="mt-4">
+    <a routerLink="/menu" class="btn-primary">Aller au menu</a>
+  </div>
+</section>
