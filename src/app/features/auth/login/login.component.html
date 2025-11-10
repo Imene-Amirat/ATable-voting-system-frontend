@@ -1,20 +1,33 @@
 <section class="grid w-full gap-6 md:grid-cols-2">
   <!-- Visuel -->
   <div class="hidden md:block">
-    <div class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-      <img class="h-80 w-full object-cover"
-           src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1600&auto=format&fit=crop"
-           alt="ÀTable – Connexion" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+    <div
+      class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+    >
+      <img
+        class="h-80 w-full object-cover"
+        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1600&auto=format&fit=crop"
+        alt="ÀTable – Connexion"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+      ></div>
       <div class="absolute bottom-4 left-4 text-white">
-        <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs ring-1 ring-white/30">
+        <div
+          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs ring-1 ring-white/30"
+        >
           ÀTable • Voting
         </div>
-        <h2 class="mt-2 text-xl font-semibold">Reviens voter pour ton plat préféré</h2>
+        <h2 class="mt-2 text-xl font-semibold">
+          Reviens voter pour ton plat préféré
+        </h2>
       </div>
     </div>
     <p class="mt-3 text-sm text-gray-500">
-      Nouvel arrivant ? <a routerLink="/signup" class="text-gray-700 underline">Créer un compte</a>
+      Nouvel arrivant ?
+      <a routerLink="/auth/signup" class="text-gray-700 underline"
+        >Créer un compte</a
+      >
     </p>
   </div>
 
@@ -27,13 +40,19 @@
 
     <!-- Rôle -->
     <div class="mb-5 grid grid-cols-3 gap-2">
-      <button class="rounded-lg border bg-white px-3 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200">
+      <button
+        class="rounded-lg border bg-white px-3 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200"
+      >
         User
       </button>
-      <button class="rounded-lg border bg-white px-3 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200">
+      <button
+        class="rounded-lg border bg-white px-3 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200"
+      >
         Owner
       </button>
-      <button class="rounded-lg border bg-white px-3 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200">
+      <button
+        class="rounded-lg border bg-white px-3 py-2 text-sm font-medium shadow-sm ring-1 ring-gray-200"
+      >
         Admin
       </button>
     </div>
@@ -41,25 +60,37 @@
     <form class="space-y-4">
       <div>
         <label class="mb-1 block text-sm font-medium">Email</label>
-        <input type="email" placeholder="you@example.com"
-               class="w-full rounded-lg border px-3 py-2 outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-black">
-        <p class="mt-1 text-xs text-gray-500">Utilise l’adresse de ton compte.</p>
+        <input
+          type="email"
+          placeholder="you@example.com"
+          class="w-full rounded-lg border px-3 py-2 outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-black"
+        />
+        <p class="mt-1 text-xs text-gray-500">
+          Utilise l’adresse de ton compte.
+        </p>
       </div>
 
       <div>
         <label class="mb-1 block text-sm font-medium">Mot de passe</label>
-        <input type="password" placeholder="••••••••"
-               class="w-full rounded-lg border px-3 py-2 outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-black">
+        <input
+          type="password"
+          placeholder="••••••••"
+          class="w-full rounded-lg border px-3 py-2 outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-black"
+        />
         <div class="mt-2 flex items-center justify-between text-sm">
           <label class="inline-flex items-center gap-2 select-none">
-            <input type="checkbox" class="h-4 w-4 rounded border-gray-300">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300" />
             <span>Se souvenir de moi</span>
           </label>
-          <a class="text-gray-700 underline" routerLink="/forgot-password">Mot de passe oublié ?</a>
+          <a class="text-gray-700 underline" routerLink="/forgot-password"
+            >Mot de passe oublié ?</a
+          >
         </div>
       </div>
 
-      <button type="button" class="btn-primary w-full justify-center">Se connecter</button>
+      <button type="button" class="btn-primary w-full justify-center">
+        Se connecter
+      </button>
     </form>
 
     <!-- Séparateur -->
@@ -75,7 +106,10 @@
     </div>
 
     <p class="mt-6 text-center text-sm text-gray-600">
-      Pas de compte ? <a routerLink="/signup" class="font-medium text-gray-800 underline">Inscris-toi</a>
+      Pas de compte ?
+      <a routerLink="/auth/signup" class="font-medium text-gray-800 underline"
+        >Inscris-toi</a
+      >
     </p>
   </div>
 </section>
