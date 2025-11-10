@@ -1,5 +1,12 @@
-<app-header />
-<main class="container-page py-6">
-  <router-outlet />
-</main>
-<app-footer />
+<div class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <!-- Main -->
+  <main class="flex-1 container-page py-6">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>
