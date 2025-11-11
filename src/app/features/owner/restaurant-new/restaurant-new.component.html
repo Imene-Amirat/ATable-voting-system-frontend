@@ -1,60 +1,144 @@
-<h1 class="mb-4 text-xl font-semibold">Créer un restaurant</h1>
-<form class="grid gap-6 md:grid-cols-2">
-  <div class="card space-y-3">
-    <h2 class="font-semibold">Informations</h2>
-    <div>
-      <label class="text-sm">Nom</label>
-      <input
-        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
-        placeholder="Le Dôme"
-      />
+<!-- En-tête simplifiée -->
+<div class="mb-6">
+  <div
+    class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs text-indigo-700 ring-1 ring-indigo-100"
+  >
+    <span class="h-1.5 w-1.5 rounded-full bg-indigo-600"></span> Nouveau
+    restaurant
+  </div>
+  <h1 class="mt-2 text-2xl font-semibold tracking-tight">
+    Créer un restaurant
+  </h1>
+  <p class="mt-1 text-sm text-gray-600">
+    Ajoute les infos clés, une image attractive et publie ta fiche.
+  </p>
+</div>
+
+<!-- Conseils UX -->
+<div class="mb-6 card-soft">
+  <div class="flex items-start gap-3">
+    <div
+      class="brand-bg h-8 w-8 flex-shrink-0 rounded-full text-white grid place-items-center"
+    >
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 6v6l4 2"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
     </div>
     <div>
-      <label class="text-sm">Catégorie</label>
-      <input
-        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
-        placeholder="Français, Fusion..."
-      />
+      <b>Astuce</b>
+      <p class="text-sm text-indigo-800">
+        Une belle image (1600×900) augmente tes chances d’approbation et
+        d’engagement des utilisateurs.
+      </p>
     </div>
+  </div>
+</div>
+
+<!-- Formulaire -->
+<form class="grid gap-6 lg:grid-cols-2">
+  <!-- Colonne A -->
+  <section class="card space-y-4">
+    <h2 class="text-lg font-semibold">Informations principales</h2>
+
     <div>
-      <label class="text-sm">Description</label>
+      <label class="label">Nom du restaurant</label>
+      <input class="input" placeholder="Le Dôme" />
+    </div>
+
+    <div>
+      <label class="label">Catégorie</label>
+      <input class="input" placeholder="Français, Fusion, Italien..." />
+      <p class="mt-1 text-xs text-gray-500">
+        Sers-toi de catégories simples et parlantes.
+      </p>
+    </div>
+
+    <div>
+      <label class="label">Description</label>
       <textarea
-        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
-        rows="4"
-        placeholder="Cuisine de marché, produits frais..."
+        class="input"
+        rows="5"
+        placeholder="Cuisine de marché, produits frais, menu du jour varié…"
       ></textarea>
     </div>
-  </div>
+  </section>
 
-  <div class="card space-y-3">
-    <h2 class="font-semibold">Coordonnées</h2>
+  <!-- Colonne B -->
+  <section class="card space-y-4">
+    <h2 class="text-lg font-semibold">Localisation & contact</h2>
+
     <div>
-      <label class="text-sm">Adresse</label>
-      <input
-        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
-        placeholder="12 rue de la République"
-      />
+      <label class="label">Adresse</label>
+      <input class="input" placeholder="12 rue de la République, Montpellier" />
     </div>
-    <div class="grid gap-3 md:grid-cols-2">
-      <div>
-        <label class="text-sm">Téléphone</label>
-        <input
-          class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
-          placeholder="+33 ..."
-        />
-      </div>
-      <div>
-        <label class="text-sm">Email</label>
-        <input
-          type="email"
-          class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
-          placeholder="contact@..."
-        />
-      </div>
-    </div>
-  </div>
 
-  <div class="md:col-span-2 flex items-center justify-end gap-2">
+    <div class="grid gap-4 md:grid-cols-2">
+      <div>
+        <label class="label">Téléphone (optionnel)</label>
+        <input class="input" placeholder="+33 ..." />
+      </div>
+      <div>
+        <label class="label">Site web (optionnel)</label>
+        <input type="url" class="input" placeholder="https://..." />
+      </div>
+    </div>
+  </section>
+
+  <!-- Colonne pleine largeur : IMAGE -->
+  <section class="card lg:col-span-2">
+    <div class="mb-3 flex items-center justify-between">
+      <h2 class="text-lg font-semibold">Image du restaurant</h2>
+      <div class="text-xs text-gray-500">
+        Recommandé : 1600×900 • JPG/WEBP ≤ 2 Mo
+      </div>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-[300px_1fr]">
+      <div class="relative overflow-hidden rounded-xl border">
+        <img
+          class="h-40 w-full object-cover"
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1400&auto=format&fit=crop"
+          alt="Aperçu restaurant"
+        />
+        <div
+          class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/40 to-transparent p-2 text-white text-xs"
+        >
+          Aperçu
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <div>
+          <label class="label">Téléverser une image</label>
+          <div class="rounded-xl border border-dashed p-4 text-center">
+            <p class="text-sm text-gray-600">Glisse ton image ici ou</p>
+            <div class="mt-2">
+              <button type="button" class="brand-ghost">
+                Choisir un fichier
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="label">…ou coller une URL d’image</label>
+          <input
+            type="url"
+            class="input"
+            placeholder="https://images.exemple.com/mon-resto.webp"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actions uniques en bas -->
+  <div class="lg:col-span-2 flex items-center justify-end gap-2">
     <a routerLink="/owner/restaurants" class="btn-outline">Annuler</a>
     <button class="btn-primary">Enregistrer & Soumettre</button>
   </div>
