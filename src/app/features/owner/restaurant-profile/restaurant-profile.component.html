@@ -1,0 +1,88 @@
+<section class="overflow-hidden rounded-2xl border bg-white shadow-sm">
+  <div class="relative h-40">
+    <img
+      class="h-full w-full object-cover"
+      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop"
+      alt="Cover"
+    />
+    <span
+      class="absolute left-4 top-4 rounded-full bg-black/70 px-2 py-0.5 text-xs text-white"
+      >APPROVED</span
+    >
+  </div>
+  <div class="p-4 md:p-6">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <h1 class="text-xl font-semibold">Le Dôme</h1>
+        <p class="text-sm text-gray-600">
+          12 rue de la République, Montpellier — Français
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <a routerLink="/owner/restaurants/1/edit" class="btn-outline">Éditer</a>
+        <a routerLink="/owner/restaurants/1/branding" class="btn-outline"
+          >Branding</a
+        >
+        <a routerLink="/owner/restaurants/1/dishes" class="btn-primary"
+          >Voir les plats</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mt-6 grid gap-4 lg:grid-cols-2">
+  <div class="card">
+    <h2 class="mb-2 font-semibold">Aperçu</h2>
+    <ul class="text-sm text-gray-700 space-y-1">
+      <li><b>Plats publiés :</b> 8</li>
+      <li><b>Note moyenne :</b> 4.5★ (312)</li>
+      <li><b>Prochain menu du jour :</b> 2025-11-12</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2 class="mb-2 font-semibold">Actions rapides</h2>
+    <div class="flex flex-wrap gap-2">
+      <a routerLink="/owner/restaurants/1/dishes/new" class="btn-outline"
+        >+ Nouveau plat</a
+      >
+      <a routerLink="/owner/scheduler" class="btn-outline">Planifier un menu</a>
+      <a routerLink="/owner/requests" class="btn-outline">Voir demandes</a>
+    </div>
+  </div>
+</section>
+
+<section class="mt-6 card">
+  <div class="mb-3 flex items-center justify-between">
+    <h2 class="text-lg font-semibold">Derniers plats</h2>
+    <a
+      routerLink="/owner/restaurants/1/dishes"
+      class="text-sm text-gray-600 hover:underline"
+      >Tout voir</a
+    >
+  </div>
+  <div class="grid gap-3 md:grid-cols-2">
+    <div class="flex items-center gap-3 rounded-lg border p-3">
+      <img
+        class="h-14 w-14 rounded object-cover"
+        src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=400&auto=format&fit=crop"
+        alt=""
+      />
+      <div class="text-sm">
+        <b>Pizza Bufala</b>
+        <p class="text-gray-500">APPROVED • 12.90€</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 rounded-lg border p-3">
+      <img
+        class="h-14 w-14 rounded object-cover"
+        src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=400&auto=format&fit=crop"
+        alt=""
+      />
+      <div class="text-sm">
+        <b>Burger Maison</b>
+        <p class="text-gray-500">PENDING • 13.50€</p>
+      </div>
+    </div>
+  </div>
+</section>

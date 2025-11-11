@@ -1,0 +1,61 @@
+<h1 class="mb-4 text-xl font-semibold">Créer un restaurant</h1>
+<form class="grid gap-6 md:grid-cols-2">
+  <div class="card space-y-3">
+    <h2 class="font-semibold">Informations</h2>
+    <div>
+      <label class="text-sm">Nom</label>
+      <input
+        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+        placeholder="Le Dôme"
+      />
+    </div>
+    <div>
+      <label class="text-sm">Catégorie</label>
+      <input
+        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+        placeholder="Français, Fusion..."
+      />
+    </div>
+    <div>
+      <label class="text-sm">Description</label>
+      <textarea
+        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+        rows="4"
+        placeholder="Cuisine de marché, produits frais..."
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="card space-y-3">
+    <h2 class="font-semibold">Coordonnées</h2>
+    <div>
+      <label class="text-sm">Adresse</label>
+      <input
+        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+        placeholder="12 rue de la République"
+      />
+    </div>
+    <div class="grid gap-3 md:grid-cols-2">
+      <div>
+        <label class="text-sm">Téléphone</label>
+        <input
+          class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+          placeholder="+33 ..."
+        />
+      </div>
+      <div>
+        <label class="text-sm">Email</label>
+        <input
+          type="email"
+          class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+          placeholder="contact@..."
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="md:col-span-2 flex items-center justify-end gap-2">
+    <a routerLink="/owner/restaurants" class="btn-outline">Annuler</a>
+    <button class="btn-primary">Enregistrer & Soumettre</button>
+  </div>
+</form>

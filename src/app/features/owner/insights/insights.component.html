@@ -1,0 +1,48 @@
+<h1 class="mb-4 text-xl font-semibold">Analytique</h1>
+
+<section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="card">
+    <p class="text-xs text-gray-500">Votes (semaine)</p>
+    <p class="mt-1 text-2xl font-semibold">1 284</p>
+  </div>
+  <div class="card">
+    <p class="text-xs text-gray-500">Taux de participation</p>
+    <p class="mt-1 text-2xl font-semibold">62%</p>
+  </div>
+  <div class="card">
+    <p class="text-xs text-gray-500">Plats actifs</p>
+    <p class="mt-1 text-2xl font-semibold">31</p>
+  </div>
+  <div class="card">
+    <p class="text-xs text-gray-500">Resto le + actif</p>
+    <p class="mt-1 text-2xl font-semibold">Le Dôme</p>
+  </div>
+</section>
+
+<section class="mt-6 grid gap-4 lg:grid-cols-2">
+  <div class="card">
+    <h2 class="mb-2 font-semibold">Top plats</h2>
+    <ul class="space-y-2 text-sm">
+      <li class="flex items-center justify-between rounded border p-2">
+        <span>Pizza Bufala</span><span class="badge">214</span>
+      </li>
+      <li class="flex items-center justify-between rounded border p-2">
+        <span>Pâtes Carbonara</span><span class="badge">198</span>
+      </li>
+      <li class="flex items-center justify-between rounded border p-2">
+        <span>Salade César</span><span class="badge">153</span>
+      </li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2 class="mb-2 font-semibold">Jours les plus actifs</h2>
+    <div class="grid grid-cols-7 gap-1 text-xs">
+      <div
+        *ngFor="let d of [].constructor(28); let i = index"
+        class="h-6 rounded"
+        [ngClass]="i % 7 === 5 || i % 7 === 6 ? 'bg-gray-200' : 'bg-gray-100'"
+      ></div>
+    </div>
+    <p class="mt-2 text-xs text-gray-500">Placeholder heatmap</p>
+  </div>
+</section>

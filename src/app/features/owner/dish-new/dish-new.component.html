@@ -1,0 +1,70 @@
+<h1 class="mb-4 text-xl font-semibold">Créer un plat</h1>
+<form class="grid gap-6 lg:grid-cols-2">
+  <div class="card space-y-3">
+    <div>
+      <label class="text-sm">Nom du plat</label>
+      <input
+        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+        placeholder="Pizza Bufala"
+      />
+    </div>
+    <div>
+      <label class="text-sm">Description</label>
+      <textarea
+        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+        rows="4"
+        placeholder="Mozzarella di bufala, tomate, basilic..."
+      ></textarea>
+    </div>
+    <div class="grid gap-3 md:grid-cols-2">
+      <div>
+        <label class="text-sm">Prix (€)</label>
+        <input
+          class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+          placeholder="12.90"
+        />
+      </div>
+      <div>
+        <label class="text-sm">Catégorie</label>
+        <input
+          class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+          placeholder="Italien, Pizza"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="card space-y-3">
+    <div>
+      <label class="text-sm">Image (URL)</label>
+      <input
+        type="url"
+        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+        placeholder="https://..."
+      />
+    </div>
+    <div>
+      <label class="text-sm">Ingrédients (séparés par ,)</label>
+      <input
+        class="mt-1 w-full rounded-lg border p-2 ring-1 ring-gray-200"
+        placeholder="tomate, mozza, basilic"
+      />
+    </div>
+    <div class="flex items-center gap-4 text-sm">
+      <label class="inline-flex items-center gap-2"
+        ><input type="checkbox" /> Veggie</label
+      >
+      <label class="inline-flex items-center gap-2"
+        ><input type="checkbox" /> Épicé</label
+      >
+      <label class="inline-flex items-center gap-2"
+        ><input type="checkbox" /> Vegan</label
+      >
+    </div>
+  </div>
+
+  <div class="lg:col-span-2 flex items-center justify-end gap-2">
+    <a routerLink="/owner/restaurants/1/dishes" class="btn-outline">Annuler</a>
+    <button class="btn-primary">Enregistrer & Soumettre</button>
+  </div>
+</form>

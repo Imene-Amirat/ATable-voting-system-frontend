@@ -1,0 +1,95 @@
+<section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="card">
+    <p class="text-xs text-gray-500">Votes aujourd’hui</p>
+    <p class="mt-1 text-2xl font-semibold">128</p>
+    <p class="mt-1 text-xs text-emerald-600">+12% vs hier</p>
+  </div>
+  <div class="card">
+    <p class="text-xs text-gray-500">Plats publiés</p>
+    <p class="mt-1 text-2xl font-semibold">24</p>
+    <p class="mt-1 text-xs text-gray-500">sur 3 restaurants</p>
+  </div>
+  <div class="card">
+    <p class="text-xs text-gray-500">Demandes en attente</p>
+    <p class="mt-1 text-2xl font-semibold">5</p>
+    <a routerLink="/owner/requests" class="mt-2 inline-block text-xs underline"
+      >Voir</a
+    >
+  </div>
+  <div class="card">
+    <p class="text-xs text-gray-500">Note moyenne</p>
+    <p class="mt-1 text-2xl font-semibold">4.4★</p>
+    <p class="mt-1 text-xs text-gray-500">basée sur 312 avis</p>
+  </div>
+</section>
+
+<section class="mt-6 grid gap-4 lg:grid-cols-2">
+  <div class="card">
+    <div class="mb-3 flex items-center justify-between">
+      <h2 class="text-lg font-semibold">À faire</h2>
+      <a
+        routerLink="/owner/requests"
+        class="text-sm text-gray-600 hover:underline"
+        >Tout voir</a
+      >
+    </div>
+    <ul class="space-y-2 text-sm">
+      <li class="flex items-center justify-between rounded-lg border p-3">
+        <span>Plat “Burger Maison” — <b>PENDING</b></span>
+        <a routerLink="/owner/dishes/42/edit" class="btn-outline">Corriger</a>
+      </li>
+      <li class="flex items-center justify-between rounded-lg border p-3">
+        <span>Resto “Le Dôme” — <b>REJECTED</b> (image floue)</span>
+        <a routerLink="/owner/restaurants/1/branding" class="btn-outline"
+          >Mettre à jour</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="mb-3 flex items-center justify-between">
+      <h2 class="text-lg font-semibold">Top plats (semaine)</h2>
+      <a
+        routerLink="/owner/insights"
+        class="text-sm text-gray-600 hover:underline"
+        >Détails</a
+      >
+    </div>
+    <div class="space-y-3 text-sm">
+      <div class="flex items-center justify-between">
+        <span>Pâtes Carbonara</span>
+        <span class="badge">214 votes</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span>Pizza Bufala</span>
+        <span class="badge">198 votes</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span>Salade César</span>
+        <span class="badge">153 votes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mt-6 card">
+  <div class="mb-3 flex items-center justify-between">
+    <h2 class="text-lg font-semibold">Aujourd’hui</h2>
+    <a routerLink="/owner/scheduler" class="btn-outline">Planifier</a>
+  </div>
+  <div class="grid gap-3 md:grid-cols-2">
+    <div class="rounded-lg border p-3">
+      <div class="flex items-center justify-between">
+        <b>Le Dôme</b><span class="badge">3 plats</span>
+      </div>
+      <p class="text-sm text-gray-500">11h00 fermeture des votes</p>
+    </div>
+    <div class="rounded-lg border p-3">
+      <div class="flex items-center justify-between">
+        <b>Bistro 42</b><span class="badge">2 plats</span>
+      </div>
+      <p class="text-sm text-gray-500">11h00 fermeture des votes</p>
+    </div>
+  </div>
+</section>
