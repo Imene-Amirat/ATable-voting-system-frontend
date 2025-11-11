@@ -1,4 +1,4 @@
-<!-- Header + actions -->
+<!-- Header -->
 <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
   <div>
     <h1 class="text-2xl font-semibold tracking-tight">Mes restaurants</h1>
@@ -6,59 +6,26 @@
       Gère tes établissements, leur visibilité et leurs plats.
     </p>
   </div>
-  <div class="flex items-center gap-2">
-    <a routerLink="/owner/restaurants/new" class="brand-btn">
-      <!-- plus icon -->
-      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M12 5v14M5 12h14"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-      </svg>
-      Nouveau restaurant
-    </a>
-  </div>
-</div>
-
-<!-- Filtres rapides -->
-<div class="mb-5 flex flex-wrap items-end gap-3">
-  <div>
-    <label class="label">Statut</label>
-    <select class="input w-48">
-      <option>Tout</option>
-      <option>APPROVED</option>
-      <option>PENDING</option>
-      <option>REJECTED</option>
-      <option>DISABLED</option>
-    </select>
-  </div>
-  <div>
-    <label class="label">Recherche</label>
-    <input class="input w-64" placeholder="Nom, catégorie, ville…" />
-  </div>
-  <button class="brand-ghost">
+  <a routerLink="/owner/restaurants/new" class="brand-btn">
     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
       <path
-        d="M3 6h18M3 12h18M3 18h18"
+        d="M12 5v14M5 12h14"
         stroke="currentColor"
         stroke-width="2"
         stroke-linecap="round"
       />
     </svg>
-    Filtres avancés
-  </button>
+    Nouveau restaurant
+  </a>
 </div>
 
-<!-- Grid de cartes -->
+<!-- Liste des restaurants -->
 <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-  <!-- CARD APPROVED -->
+  <!-- Exemple restaurant APPROVED -->
   <article
     class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
   >
     <div class="relative h-40">
-      <!-- image resto -->
       <img
         class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1400&auto=format&fit=crop"
@@ -87,7 +54,7 @@
     <div class="p-4">
       <div class="flex items-center justify-between text-sm">
         <div class="flex items-center gap-2 text-amber-500">
-          <!-- stars -->
+          <!-- étoiles -->
           <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
             <path
               d="M10 15.27 4.82 18.32l1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
@@ -138,7 +105,7 @@
     </div>
   </article>
 
-  <!-- CARD PENDING (exemple variation) -->
+  <!-- Exemple restaurant PENDING -->
   <article
     class="group overflow-hidden rounded-2xl border border-amber-200 bg-amber-50 shadow-sm transition hover:shadow-md"
   >
