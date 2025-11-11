@@ -2,10 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* helpers globaux */
-.container-page { @apply mx-auto max-w-5xl px-4; }
-.card { @apply rounded-2xl border border-gray-200 bg-white p-4 shadow-sm; }
-.btn { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-medium; }
-.btn-primary { @apply btn bg-black text-white hover:bg-gray-800; }
-.btn-outline { @apply btn border border-gray-300 bg-white hover:bg-gray-50; }
-.badge { @apply inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm; }
+/* THEME — INDIGO + ROSE (pro & chaleureux) */
+.brand-text { @apply text-indigo-700; }
+.brand-bg   { @apply bg-indigo-600; }
+.brand-bg-2 { @apply bg-indigo-50; }
+.brand-ring { @apply ring-indigo-600; }
+
+/* Boutons */
+.brand-btn   { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition; }
+.brand-ghost { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-medium border border-indigo-200 text-indigo-700 hover:bg-indigo-50 transition; }
+
+.btn         { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 font-medium; }
+.btn-primary { @apply btn text-white bg-indigo-600 hover:bg-indigo-700; }
+.btn-outline { @apply btn border border-gray-300 text-gray-700 hover:bg-gray-50; }
+
+/* Badges/Pills */
+.pill        { @apply inline-flex items-center rounded-full bg-rose-100 px-3 py-1 text-xs font-medium text-rose-800; }   /* accent chaleureux */
+.badge       { @apply inline-flex items-center rounded-full bg-gray-100 px-2.5 py-1 text-xs; }
+
+/* Cards & Inputs */
+.card        { @apply rounded-2xl border border-gray-200 bg-white p-4 shadow-sm; }
+.card-soft   { @apply rounded-2xl border border-indigo-100 bg-indigo-50 p-4; }
+
+.label       { @apply mb-1 block text-sm font-medium; }
+.input       { @apply w-full rounded-lg border px-3 py-2 outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-indigo-600; }
