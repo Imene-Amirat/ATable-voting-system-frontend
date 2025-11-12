@@ -1,4 +1,19 @@
-<div class="mb-4 flex flex-wrap items-end gap-3">
+<!-- ENTÊTE PRINCIPALE -->
+<div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+  <div>
+    <h1 class="text-2xl font-semibold tracking-tight">Mes plats</h1>
+    <p class="mt-1 text-sm text-gray-600">
+      Gère les plats proposés dans tes restaurants.
+    </p>
+  </div>
+
+  <a routerLink="/owner/restaurants/1/dishes/new" class="btn-primary">
+    + Nouveau plat
+  </a>
+</div>
+
+<!-- FILTRE PAR RESTAURANT -->
+<div class="mb-6 flex flex-wrap items-end gap-3">
   <div>
     <label class="text-sm">Restaurant</label>
     <select class="mt-1 w-64 rounded border p-2">
@@ -7,54 +22,73 @@
       <option>Bistro 42</option>
     </select>
   </div>
-  <div>
-    <label class="text-sm">Statut</label>
-    <select class="mt-1 w-48 rounded border p-2">
-      <option>Tous</option>
-      <option>APPROVED</option>
-      <option>PENDING</option>
-      <option>REJECTED</option>
-    </select>
-  </div>
-  <a routerLink="/owner/restaurants/1/dishes/new" class="btn-primary"
-    >+ Nouveau plat</a
-  >
 </div>
 
-<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-  <article class="rounded-2xl border bg-white p-3 shadow-sm">
+<!-- LISTE DES PLATS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <!-- ========= CARTE PLAT 1 ========= -->
+  <article
+    class="rounded-2xl border bg-white p-3 shadow-sm hover:shadow-md transition"
+  >
     <div class="flex items-center gap-3">
       <img
         class="h-14 w-14 rounded object-cover"
         src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=400&auto=format&fit=crop"
-        alt=""
+        alt="Pizza Bufala"
       />
       <div class="text-sm">
-        <b>Pizza Bufala</b>
-        <p class="text-gray-500">Le Dôme • APPROVED • 12.90€</p>
+        <b class="block text-gray-800">Pizza Bufala</b>
+        <p class="text-gray-500">Le Dôme • 12.90€</p>
       </div>
     </div>
+
     <div class="mt-3 flex gap-2">
       <a routerLink="/owner/dishes/42/edit" class="btn-outline">Éditer</a>
       <button class="btn-outline">Dupliquer</button>
     </div>
   </article>
 
-  <article class="rounded-2xl border bg-white p-3 shadow-sm">
+  <!-- ========= CARTE PLAT 2 ========= -->
+  <article
+    class="rounded-2xl border bg-white p-3 shadow-sm hover:shadow-md transition"
+  >
     <div class="flex items-center gap-3">
       <img
         class="h-14 w-14 rounded object-cover"
         src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=400&auto=format&fit=crop"
-        alt=""
+        alt="Burger Maison"
       />
       <div class="text-sm">
-        <b>Burger Maison</b>
-        <p class="text-gray-500">Bistro 42 • PENDING • 13.50€</p>
+        <b class="block text-gray-800">Burger Maison</b>
+        <p class="text-gray-500">Bistro 42 • 13.50€</p>
       </div>
     </div>
+
     <div class="mt-3 flex gap-2">
       <a routerLink="/owner/dishes/43/edit" class="btn-outline">Éditer</a>
       <button class="btn-outline">Soumettre</button>
+    </div>
+  </article>
+
+  <!-- ========= CARTE PLAT 3 ========= -->
+  <article
+    class="rounded-2xl border bg-white p-3 shadow-sm hover:shadow-md transition"
+  >
+    <div class="flex items-center gap-3">
+      <img
+        class="h-14 w-14 rounded object-cover"
+        src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=400&auto=format&fit=crop"
+        alt="Pâtes Carbonara"
+      />
+      <div class="text-sm">
+        <b class="block text-gray-800">Pâtes Carbonara</b>
+        <p class="text-gray-500">Le Dôme • 11.50€</p>
+      </div>
+    </div>
+
+    <div class="mt-3 flex gap-2">
+      <a routerLink="/owner/dishes/44/edit" class="btn-outline">Éditer</a>
+      <button class="btn-outline">Dupliquer</button>
     </div>
   </article>
 </div>
