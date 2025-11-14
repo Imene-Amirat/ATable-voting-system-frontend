@@ -1,32 +1,142 @@
-<section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-  <div class="card">
-    <p class="text-xs text-gray-500">Votes aujourd’hui</p>
-    <p class="mt-1 text-2xl font-semibold">128</p>
-    <p class="mt-1 text-xs text-emerald-600">+12% vs hier</p>
+<!-- HEADER DASHBOARD -->
+<div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+  <div>
+    <p class="text-xs uppercase tracking-wide text-gray-400">
+      Panel propriétaire
+    </p>
+    <h1 class="mt-1 text-2xl font-semibold tracking-tight">
+      Vue d’ensemble de tes restaurants
+    </h1>
+    <p class="mt-1 text-sm text-gray-600">
+      Suis les votes du jour, les demandes en attente et les plats qui
+      cartonnent.
+    </p>
   </div>
-  <div class="card">
-    <p class="text-xs text-gray-500">Plats publiés</p>
-    <p class="mt-1 text-2xl font-semibold">24</p>
-    <p class="mt-1 text-xs text-gray-500">sur 3 restaurants</p>
-  </div>
-  <div class="card">
-    <p class="text-xs text-gray-500">Demandes en attente</p>
-    <p class="mt-1 text-2xl font-semibold">5</p>
-    <a routerLink="/owner/requests" class="mt-2 inline-block text-xs underline"
-      >Voir</a
+
+  <div class="flex items-center gap-3">
+    <div
+      class="hidden sm:flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs text-indigo-700"
     >
+      <span class="h-1.5 w-1.5 rounded-full bg-indigo-600"></span>
+      Aujourd’hui • {{ "2025-11-10" }}
+    </div>
+    <button class="btn-outline">Exporter</button>
   </div>
-  <div class="card">
-    <p class="text-xs text-gray-500">Note moyenne</p>
-    <p class="mt-1 text-2xl font-semibold">4.4★</p>
-    <p class="mt-1 text-xs text-gray-500">basée sur 312 avis</p>
+</div>
+
+<!-- STATS PRINCIPALES -->
+<section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <!-- Votes aujourd’hui -->
+  <div class="card relative overflow-hidden">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-transparent pointer-events-none"
+    ></div>
+    <div class="relative flex items-start justify-between">
+      <div>
+        <p class="text-xs text-gray-500 flex items-center gap-1">
+          <span
+            class="inline-block h-1.5 w-1.5 rounded-full bg-green-500"
+          ></span>
+          Votes aujourd’hui
+        </p>
+        <p class="mt-1 text-2xl font-semibold">128</p>
+        <p class="mt-1 text-xs text-green-600 flex items-center gap-1">
+          <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M5 14l5-5 4 4 5-7"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          +12% vs hier
+        </p>
+      </div>
+      <div class="rounded-full bg-white/80 p-2 shadow-sm">
+        <svg class="h-5 w-5 text-indigo-500" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4 19V5l7 7 7-7v14"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plats publiés -->
+  <div class="card relative overflow-hidden">
+    <div class="absolute inset-x-0 bottom-0 h-1 bg-indigo-100"></div>
+    <div class="relative">
+      <p class="text-xs text-gray-500">Plats publiés</p>
+      <p class="mt-1 text-2xl font-semibold">24</p>
+      <p class="mt-1 text-xs text-gray-500">sur 3 restaurants</p>
+      <div class="mt-3 flex gap-1 text-[10px]">
+        <span class="badge">Resto 1 · 8</span>
+        <span class="badge">Resto 2 · 9</span>
+        <span class="badge">Resto 3 · 7</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demandes en attente -->
+  <div class="card relative overflow-hidden">
+    <div
+      class="absolute right-0 top-0 h-12 w-12 rounded-bl-full bg-amber-50"
+    ></div>
+    <div class="relative">
+      <p class="text-xs text-gray-500">Demandes en attente</p>
+      <p class="mt-1 text-2xl font-semibold">5</p>
+      <a
+        routerLink="/owner/requests"
+        class="mt-2 inline-flex items-center gap-1 text-xs text-amber-700"
+      >
+        Voir le détail
+        <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M9 5l7 7-7 7"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Note moyenne -->
+  <div class="card relative overflow-hidden">
+    <div
+      class="absolute inset-0 bg-gradient-to-tr from-yellow-50 to-transparent pointer-events-none"
+    ></div>
+    <div class="relative">
+      <p class="text-xs text-gray-500">Note moyenne</p>
+      <div class="mt-1 flex items-baseline gap-1">
+        <p class="text-2xl font-semibold">4.4</p>
+        <span class="text-yellow-400 text-lg">★</span>
+      </div>
+      <p class="mt-1 text-xs text-gray-500">basée sur 312 avis</p>
+      <div class="mt-2 flex gap-1 text-[10px]">
+        <span class="badge">> 4★ : 72%</span>
+        <span class="badge">3–4★ : 22%</span>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- DEUXIÈME LIGNE : À FAIRE / TOP PLATS -->
 <section class="mt-6 grid gap-4 lg:grid-cols-2">
+  <!-- À faire -->
   <div class="card">
     <div class="mb-3 flex items-center justify-between">
-      <h2 class="text-lg font-semibold">À faire</h2>
+      <div>
+        <h2 class="text-lg font-semibold">À faire</h2>
+        <p class="text-xs text-gray-500">Les actions à traiter en priorité.</p>
+      </div>
       <a
         routerLink="/owner/requests"
         class="text-sm text-gray-600 hover:underline"
@@ -34,12 +144,34 @@
       >
     </div>
     <ul class="space-y-2 text-sm">
-      <li class="flex items-center justify-between rounded-lg border p-3">
-        <span>Plat “Burger Maison” — <b>PENDING</b></span>
+      <li
+        class="flex items-center justify-between rounded-xl border px-3 py-2.5 bg-amber-50 border-amber-100"
+      >
+        <div>
+          <span class="font-medium">Plat “Burger Maison”</span>
+          <span
+            class="text-xs ml-1 rounded-full bg-amber-100 px-2 py-0.5 text-amber-800"
+            >PENDING</span
+          >
+          <p class="text-xs text-amber-700 mt-0.5">
+            Ajouter une photo HD pour validation.
+          </p>
+        </div>
         <a routerLink="/owner/dishes/42/edit" class="btn-outline">Corriger</a>
       </li>
-      <li class="flex items-center justify-between rounded-lg border p-3">
-        <span>Resto “Le Dôme” — <b>REJECTED</b> (image floue)</span>
+      <li
+        class="flex items-center justify-between rounded-xl border px-3 py-2.5"
+      >
+        <div>
+          <span class="font-medium">Resto “Le Dôme”</span>
+          <span
+            class="text-xs ml-1 rounded-full bg-rose-100 px-2 py-0.5 text-rose-800"
+            >REJECTED</span
+          >
+          <p class="text-xs text-gray-500 mt-0.5">
+            Image floue, mettre à jour le visuel.
+          </p>
+        </div>
         <a routerLink="/owner/restaurants/1/branding" class="btn-outline"
           >Mettre à jour</a
         >
@@ -47,9 +179,15 @@
     </ul>
   </div>
 
+  <!-- Top plats -->
   <div class="card">
     <div class="mb-3 flex items-center justify-between">
-      <h2 class="text-lg font-semibold">Top plats (semaine)</h2>
+      <div>
+        <h2 class="text-lg font-semibold">Top plats (semaine)</h2>
+        <p class="text-xs text-gray-500">
+          Les plats les plus votés cette semaine.
+        </p>
+      </div>
       <a
         routerLink="/owner/insights"
         class="text-sm text-gray-600 hover:underline"
@@ -57,39 +195,64 @@
       >
     </div>
     <div class="space-y-3 text-sm">
-      <div class="flex items-center justify-between">
-        <span>Pâtes Carbonara</span>
+      <div
+        class="flex items-center justify-between rounded-lg border px-3 py-2"
+      >
+        <div>
+          <span class="font-medium">Pâtes Carbonara</span>
+          <p class="text-xs text-gray-500">Le Dôme</p>
+        </div>
         <span class="badge">214 votes</span>
       </div>
-      <div class="flex items-center justify-between">
-        <span>Pizza Bufala</span>
+      <div
+        class="flex items-center justify-between rounded-lg border px-3 py-2"
+      >
+        <div>
+          <span class="font-medium">Pizza Bufala</span>
+          <p class="text-xs text-gray-500">Le Dôme</p>
+        </div>
         <span class="badge">198 votes</span>
       </div>
-      <div class="flex items-center justify-between">
-        <span>Salade César</span>
+      <div
+        class="flex items-center justify-between rounded-lg border px-3 py-2"
+      >
+        <div>
+          <span class="font-medium">Salade César</span>
+          <p class="text-xs text-gray-500">Bistro 42</p>
+        </div>
         <span class="badge">153 votes</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TROISIÈME LIGNE : AUJOURD’HUI -->
 <section class="mt-6 card">
   <div class="mb-3 flex items-center justify-between">
-    <h2 class="text-lg font-semibold">Aujourd’hui</h2>
+    <div>
+      <h2 class="text-lg font-semibold">Aujourd’hui</h2>
+      <p class="text-xs text-gray-500">
+        Récap des restaurants qui participent au vote du jour.
+      </p>
+    </div>
     <a routerLink="/owner/scheduler" class="btn-outline">Planifier</a>
   </div>
   <div class="grid gap-3 md:grid-cols-2">
-    <div class="rounded-lg border p-3">
+    <div class="rounded-xl border px-3 py-3 flex flex-col gap-1">
       <div class="flex items-center justify-between">
-        <b>Le Dôme</b><span class="badge">3 plats</span>
+        <b>Le Dôme</b>
+        <span class="badge">3 plats</span>
       </div>
       <p class="text-sm text-gray-500">11h00 fermeture des votes</p>
+      <p class="text-xs text-green-600">Participation estimée : 62%</p>
     </div>
-    <div class="rounded-lg border p-3">
+    <div class="rounded-xl border px-3 py-3 flex flex-col gap-1">
       <div class="flex items-center justify-between">
-        <b>Bistro 42</b><span class="badge">2 plats</span>
+        <b>Bistro 42</b>
+        <span class="badge">2 plats</span>
       </div>
       <p class="text-sm text-gray-500">11h00 fermeture des votes</p>
+      <p class="text-xs text-gray-500">Nouvelle campagne lancée aujourd’hui</p>
     </div>
   </div>
 </section>
