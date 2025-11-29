@@ -26,6 +26,8 @@ import { RestaurantEditComponent } from './features/owner/restaurant-edit/restau
 import { RestaurantNewComponent } from './features/owner/restaurant-new/restaurant-new.component';
 import { RestaurantsListComponent } from './features/owner/restaurants/restaurants-list.component';
 import { RestaurantProfileComponent } from './features/owner/restaurant-profile/restaurant-profile.component';
+import { roleGuard } from './core/guards/role.guard';
+import { NotAuthorizedComponent } from './features/notAuthorized/not-authorized/not-authorized.component';
 
 export const routes: Routes = [
   {
@@ -38,6 +40,8 @@ export const routes: Routes = [
   },
   {
     path: 'owner',
+    canActivate: [roleGuard],
+    data: { roles: ['OWNER'] },
     component: OwnerLayoutComponent,
     children: [
       { path: '', component: DashboardComponent },
@@ -60,7 +64,9 @@ export const routes: Routes = [
     ]
   },
   {
-    path: '',
+    path: 'user',
+    canActivate: [roleGuard],
+    data: { roles: ['USER'] },
     component: UserLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
@@ -70,5 +76,6 @@ export const routes: Routes = [
       { path: 'me/profile', component: ProfileComponent },
     ],
   },
+  { path: 'not-authorized', component: NotAuthorizedComponent },
   { path: '**', redirectTo: '' },
 ];
