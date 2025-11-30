@@ -30,6 +30,7 @@ import { roleGuard } from './core/guards/role.guard';
 import { NotAuthorizedComponent } from './features/notAuthorized/not-authorized/not-authorized.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
   {
     path: 'auth',
     component: AuthLayoutComponent,
@@ -77,5 +78,5 @@ export const routes: Routes = [
     ],
   },
   { path: 'not-authorized', component: NotAuthorizedComponent },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'auth/login' },
 ];

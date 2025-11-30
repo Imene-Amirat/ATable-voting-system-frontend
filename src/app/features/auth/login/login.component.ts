@@ -32,27 +32,37 @@ export class LoginComponent {
   });
 
   login(){
+    console.log('Login attempt');
     this.errorMessage = '';
 
     if (this.loginForm.invalid) {
+      console.log('Invalid form');
       this.loginForm.markAllAsTouched(); 
       return;
     }
+
+    this.errorMessage = ''
 
     const email = this.loginForm.get('email')?.value || '';
     const password = this.loginForm.get('password')?.value || '';
 
     this.authService.login(email, password).subscribe({
-      next: () => {
-        this.router.navigate(['/']);
+      next: (res) => {
+        this.errorMessage = '';
+        console.log('Login success');
+
+        const role = res.role;
+        if (role === 'USER') this.router.navigate(['/user']);
+        if (role === 'OWNER') this.router.navigate(['/owner']);
+        if (role === 'ADMIN') this.router.navigate(['/admin']);
       },
       error: (err) => {
-        if (err.status === 401 || err.status === 400) {
-          this.errorMessage = 'Email ou mot de passe incorrect.';
+        console.log(err);
+        if (err.status === 401) {
+          this.errorMessage = err.error.message || 'Identifiants incorrects';
         } else {
           this.errorMessage = 'Erreur serveur, réessayez plus tard.';
         }
-        console.error(err);
       }
     });
   }
