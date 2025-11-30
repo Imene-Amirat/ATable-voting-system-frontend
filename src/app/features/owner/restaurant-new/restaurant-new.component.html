@@ -40,19 +40,27 @@
 </div>
 
 <!-- Formulaire -->
-<form class="grid gap-6 lg:grid-cols-2">
+<form
+  [formGroup]="restaurantForm"
+  (ngSubmit)="submitRestaurant()"
+  class="grid gap-6 lg:grid-cols-2"
+>
   <!-- Colonne A -->
   <section class="card space-y-4">
     <h2 class="text-lg font-semibold">Informations principales</h2>
 
     <div>
       <label class="label">Nom du restaurant</label>
-      <input class="input" placeholder="Le Dôme" />
+      <input class="input" formControlName="name" placeholder="Le Dôme" />
     </div>
 
     <div>
       <label class="label">Catégorie</label>
-      <input class="input" placeholder="Français, Fusion, Italien..." />
+      <input
+        class="input"
+        formControlName="category"
+        placeholder="Français, Fusion, Italien..."
+      />
       <p class="mt-1 text-xs text-gray-500">
         Sers-toi de catégories simples et parlantes.
       </p>
@@ -62,6 +70,7 @@
       <label class="label">Description</label>
       <textarea
         class="input"
+        formControlName="description"
         rows="5"
         placeholder="Cuisine de marché, produits frais, menu du jour varié…"
       ></textarea>
@@ -74,22 +83,31 @@
 
     <div>
       <label class="label">Adresse</label>
-      <input class="input" placeholder="12 rue de la République" />
+      <input
+        class="input"
+        formControlName="address"
+        placeholder="12 rue de la République"
+      />
     </div>
 
     <div>
       <label class="label">Ville</label>
-      <input class="input" placeholder="Montpellier" />
+      <input class="input" formControlName="city" placeholder="Montpellier" />
     </div>
 
     <div class="grid gap-4 md:grid-cols-2">
       <div>
         <label class="label">Téléphone (optionnel)</label>
-        <input class="input" placeholder="+33 ..." />
+        <input class="input" formControlName="phone" placeholder="+33 ..." />
       </div>
       <div>
         <label class="label">Site web (optionnel)</label>
-        <input type="url" class="input" placeholder="https://..." />
+        <input
+          type="url"
+          class="input"
+          formControlName="website"
+          placeholder="https://..."
+        />
       </div>
     </div>
   </section>
@@ -145,6 +163,38 @@
   <!-- Actions uniques en bas -->
   <div class="lg:col-span-2 flex items-center justify-end gap-2">
     <a routerLink="/owner/restaurants" class="btn-outline">Annuler</a>
-    <button class="btn-primary">Enregistrer & Soumettre</button>
+    <button
+      type="submit"
+      [disabled]="isSubmitting"
+      class="btn-primary flex items-center gap-2"
+      [ngClass]="{
+        'bg-gray-400 cursor-not-allowed opacity-60': isSubmitting
+      }"
+    >
+      <span *ngIf="!isSubmitting">Enregistrer & Soumettre</span>
+
+      <span *ngIf="isSubmitting" class="flex items-center gap-2">
+        <svg
+          class="animate-spin h-4 w-4 text-white"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+          ></path>
+        </svg>
+        Envoi...
+      </span>
+    </button>
   </div>
 </form>
