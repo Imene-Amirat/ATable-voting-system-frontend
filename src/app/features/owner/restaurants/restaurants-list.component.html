@@ -19,117 +19,75 @@
   </a>
 </div>
 
-<!-- Liste des restaurants -->
 <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-  <!-- Exemple restaurant APPROVED -->
   <article
-    class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+    *ngFor="let r of restaurants"
+    class="group overflow-hidden rounded-2xl border shadow-sm transition hover:shadow-md"
+    [ngClass]="{
+      'bg-white border-gray-200': r.status === 'APPROVED',
+      'bg-amber-50 border-amber-200': r.status === 'PENDING'
+    }"
   >
+    <!-- IMAGE -->
     <div class="relative h-40">
       <img
         class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1400&auto=format&fit=crop"
-        alt="Le Dôme"
+        [src]="r.photoUrl"
+        [alt]="r.name"
       />
+
+      <!-- Overlay gradient -->
       <div
-        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+        class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
       ></div>
-      <div
-        class="absolute left-3 right-3 top-3 flex items-center justify-between"
-      >
-        <span class="pill">APPROVED</span>
+
+      <!-- Statut et catégorie -->
+      <div class="absolute left-3 right-3 top-3 flex justify-between">
+        <span class="pill">{{ r.status }}</span>
         <span
           class="rounded-full bg-white/90 px-2 py-0.5 text-[11px] text-gray-700"
-          >Français</span
         >
+          {{ r.category }}
+        </span>
       </div>
-      <div class="absolute bottom-3 left-3 text-white">
-        <h3 class="text-lg font-semibold drop-shadow">Le Dôme</h3>
-        <p class="text-xs text-white/80">
-          Montpellier • 12 rue de la République
-        </p>
+
+      <!-- Nom + adresse -->
+      <div class="absolute bottom-3 left-3 text-white drop-shadow">
+        <h3 class="text-lg font-semibold">{{ r.name }}</h3>
+
+        <p class="text-xs text-white/80">{{ r.city }} • {{ r.address }}</p>
       </div>
     </div>
 
+    <!-- CONTENU -->
     <div class="p-4">
+      <!-- Rating + plats -->
       <div class="flex items-center justify-between text-sm">
-        <div class="flex items-center gap-2 text-amber-500">
-          <!-- étoiles -->
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-            <path
-              d="M10 15.27 4.82 18.32l1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
-            />
-          </svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-            <path
-              d="M10 15.27 4.82 18.32l1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
-            />
-          </svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-            <path
-              d="M10 15.27 4.82 18.32l1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
-            />
-          </svg>
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-            <path
-              d="M10 15.27 4.82 18.32l1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
-            />
-          </svg>
-          <svg class="h-4 w-4 fill-current text-amber-300" viewBox="0 0 20 20">
-            <defs>
-              <linearGradient id="half">
-                <stop offset="50%" stop-color="currentColor" />
-                <stop offset="50%" stop-color="transparent" />
-              </linearGradient>
-            </defs>
-            <path
-              fill="url(#half)"
-              d="M10 15.27 4.82 18.32l1-5.82L.64 7.98l5.86-.85L10 1.67l2.5 5.46 5.86.85-4.18 4.52 1 5.82z"
-            />
-          </svg>
-          <span class="ml-1 text-gray-500">4.5 (312)</span>
+        <div class="flex items-center gap-1 text-amber-500">
+          ★ {{ r.rating }}
         </div>
-        <span class="text-gray-500">8 plats publiés</span>
       </div>
 
+      <!-- Actions -->
       <div class="mt-4 flex flex-wrap gap-2">
-        <a routerLink="/owner/restaurants/1" class="brand-ghost">Voir</a>
-        <a routerLink="/owner/restaurants/1/dishes" class="brand-ghost"
+        <a [routerLink]="'/owner/restaurants/' + r.id" class="brand-ghost"
+          >Voir</a
+        >
+        <a
+          [routerLink]="'/owner/restaurants/' + r.id + '/dishes'"
+          class="brand-ghost"
           >Plats</a
         >
-        <a routerLink="/owner/restaurants/1/branding" class="brand-ghost"
+        <a
+          [routerLink]="'/owner/restaurants/' + r.id + '/branding'"
+          class="brand-ghost"
           >Branding</a
         >
-        <a routerLink="/owner/restaurants/1/edit" class="btn-outline">Éditer</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- Exemple restaurant PENDING -->
-  <article
-    class="group overflow-hidden rounded-2xl border border-amber-200 bg-amber-50 shadow-sm transition hover:shadow-md"
-  >
-    <div class="relative h-40">
-      <img
-        class="h-full w-full object-cover opacity-80"
-        src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1400&auto=format&fit=crop"
-        alt="Bistro 42"
-      />
-      <div class="absolute left-3 top-3 pill">PENDING</div>
-      <div class="absolute bottom-3 left-3 text-white drop-shadow">
-        <h3 class="text-lg font-semibold">Bistro 42</h3>
-        <p class="text-xs text-white/80">Fusion • Dossier en cours</p>
-      </div>
-    </div>
-    <div class="p-4">
-      <p class="text-sm text-gray-700">
-        Complète le branding (image HD) pour accélérer l’approbation.
-      </p>
-      <div class="mt-3 flex flex-wrap gap-2">
-        <a routerLink="/owner/restaurants/2/branding" class="brand-ghost"
-          >Mettre à jour</a
+        <a
+          [routerLink]="'/owner/restaurants/' + r.id + '/edit'"
+          class="btn-outline"
+          >Éditer</a
         >
-        <a routerLink="/owner/restaurants/2/edit" class="btn-outline">Éditer</a>
       </div>
     </div>
   </article>
