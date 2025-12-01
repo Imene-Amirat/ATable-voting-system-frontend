@@ -43,10 +43,12 @@ restaurantId!: number;
 
   submitDish() {
     if (this.dishForm.invalid) {
+      console.log('Invalid form');
       this.dishForm.markAllAsTouched();
       return;
     }
 
+    console.log('Submitting new dish');
     const payload: DishCreate = {
       restaurantId: this.restaurantId,
       name: this.dishForm.value.name ?? '',
@@ -62,6 +64,7 @@ restaurantId!: number;
 
     this.dishService.createDish(payload).subscribe({
       next: () => {
+        console.log('Dish created successfully');
         this.router.navigate([`/owner/restaurants/${this.restaurantId}/dishes`]);
       },
       error: (err) => console.error(err)

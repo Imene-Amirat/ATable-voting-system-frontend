@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-owner-layout',
@@ -10,4 +10,13 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 export class OwnerLayoutComponent {
   year = new Date().getFullYear();
+
+  restaurantId!: number;
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.restaurantId = Number(this.route.snapshot.paramMap.get('id'));
+    console.log("Restaurant ID =", this.restaurantId);
+  }
 }
